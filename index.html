@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Student Quiz Portal</title>
+    
+    <!-- Link to Google Fonts (Plus Jakarta Sans) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Link to CSS file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <!-- Main Container -->
+    <div class="app-container">
+        
+        <!-- 1. LOGIN SECTION -->
+        <div id="login-section" class="active-section">
+            <div class="portal-card login-card">
+                <h1>Smart Student Quiz Portal</h1>
+                <p>Please enter your details below to start</p>
+                
+                <form id="login-form">
+                    <div class="input-group">
+                        <label for="student-name">Full Name:</label>
+                        <input type="text" id="student-name" placeholder="Enter your name" required>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="roll-number">Roll Number:</label>
+                        <input type="text" id="roll-number" placeholder="Enter your roll number" required>
+                    </div>
+                    
+                    <button type="submit" class="btn primary-btn">Go to Instructions</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- 2. INSTRUCTIONS SECTION -->
+        <div id="instructions-section" class="hidden">
+            <div class="portal-card instructions-card">
+                <h2>Quiz Instructions</h2>
+                <p class="student-welcome">
+                    Welcome, <b id="display-name" class="highlight-text">Student</b>!
+                </p>
+                
+                <ul class="instruction-list">
+                    <li><b>Total Questions:</b> 10 Questions</li>
+                    <li><b>Time Limit:</b> 5 Minutes</li>
+                    <li><b>Marks:</b> 1 Mark per correct answer</li>
+                    <li><b>Negative Marking:</b> No</li>
+                </ul>
+                
+                <div class="warning-box">
+                    Note: The quiz will auto-submit when the timer is 00:00.
+                </div>
+                
+                <button id="start-quiz-btn" class="btn primary-btn">Start Quiz</button>
+            </div>
+        </div>
+
+        <!-- 3. QUIZ SECTION -->
+        <div id="quiz-section" class="hidden">
+            <div class="portal-card quiz-card">
+                
+                <div class="quiz-header">
+                    <div class="progress-container">
+                        <b id="question-tracker">Question 1 of 10</b>
+                        <div class="progress-bar-bg">
+                            <div class="progress-bar" id="progress-bar"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Timer Display -->
+                    <div class="timer-container" id="timer-display">
+                        05:00
+                    </div>
+                </div>
+
+                <div class="question-container">
+                    <h3 id="question-text">Loading question...</h3>
+                    
+                    <!-- Options will be added here using JavaScript -->
+                    <div class="options-container" id="options-container"></div>
+                </div>
+
+                <div class="quiz-footer">
+                    <button id="prev-btn" class="btn secondary-btn" disabled>Previous Question</button>
+                    <button id="next-btn" class="btn primary-btn">Next Question</button>
+                    <button id="submit-quiz-btn" class="btn submit-btn hidden">Submit Quiz</button>
+                </div>
+                
+            </div>
+        </div>
+
+        <!-- 4. RESULT SECTION -->
+        <div id="result-section" class="hidden">
+            <div class="portal-card result-card" id="result-card">
+                <h2>Your Result</h2>
+                
+                <div class="marksheet">
+                    <div class="result-row">
+                        <span>Name:</span>
+                        <b id="result-name">Name</b>
+                    </div>
+                    <div class="result-row">
+                        <span>Roll No:</span>
+                        <b id="result-roll">Roll</b>
+                    </div>
+                    
+                    <hr class="divider">
+                    
+                    <div class="score-circle">
+                        <h1 id="result-score" class="score-number">0/10</h1>
+                        <p id="result-percentage" class="percentage-number">0%</p>
+                    </div>
+                    
+                    <div class="stats-container">
+                        <div class="stat-box correct">
+                            <span>Correct</span>
+                            <b id="stat-correct">0</b>
+                        </div>
+                        <div class="stat-box wrong">
+                            <span>Wrong</span>
+                            <b id="stat-wrong">0</b>
+                        </div>
+                        <div class="stat-box skipped">
+                            <span>Skipped</span>
+                            <b id="stat-skipped">0</b>
+                        </div>
+                    </div>
+                    
+                    <h2 class="performance-msg" id="performance-msg">
+                        Message here
+                    </h2>
+                </div>
+                
+                <button id="restart-btn" class="btn primary-btn">Take Quiz Again</button>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Link to JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>
