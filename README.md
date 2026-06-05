@@ -36,6 +36,6 @@ The project is structured with a modular, single-page architecture:
 ## 🏃 How to Run the Project
 
 1. Download or clone this repository to your local machine.
-2. Open the project folder: `d:\bytXL\MERN\Smart Student Quiz Portal\`
+2. Open the project folder: `cd: Smart Student Quiz Portal` run `index.html` File on any Browser
 3. Double-click **[index.html](file:///d:/bytXL/MERN/Smart%20Student%20Quiz%20Portal/index.html)**, or drag and drop it into any modern web browser (Google Chrome, Microsoft Edge, Mozilla Firefox, Safari, etc.).
 4. Input credentials to begin testing!
